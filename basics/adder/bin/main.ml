@@ -15,5 +15,5 @@ let intlist_of_string s =
     
 let () = match read_line () with
     Some s -> print_endline (string_of_int (addlist (intlist_of_string s)))
-  | None -> print_endline "0"
+  | None -> print_endline "0";;
 
