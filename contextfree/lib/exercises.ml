@@ -39,36 +39,6 @@ let palindromes : grammar =
       [
         S --> "0S0";
         S --> "1S1";
-        S --> "";
-      ];
-    start = S;
-  }
-
-
-(* #### Exercise 1, easy (zero_n_one_n) *)
-let zero_n_one_n : grammar = 
-  {
-    symbols = [ S ];
-    terminals = [ '0'; '1' ];
-    productions =
-      [
-        S --> "0S1";
-        S --> "";
-      ];
-    start = S;
-  }
-
-
-
-(* #### Exercise 2, easy (palindromes) *)
-let palindromes : grammar = 
-  {
-    symbols = [ S ];
-    terminals = [ '0'; '1' ];
-    productions =
-      [
-        S --> "0S0";
-        S --> "1S1";
         S --> "0";
         S --> "1";
         S --> "";
@@ -111,14 +81,13 @@ let same_amount : grammar =
     terminals = [ '0'; '1' ];
     productions =
       [
-        S --> "0S1"; 
-        S --> "1S0";
-        S --> "ASB";
-        S --> "";
-        A --> "0S";
-        A --> "0AB";
-        B --> "1S";
-        B --> "1BA";
+        S --> "0S1";(*0*)
+        S --> "1S0";(*1*)
+        S --> "01S";(*2*)
+        S --> "10S";(*3*)
+        S --> "00S";(*4*)
+        S --> "11S";(*5*)
+        S --> "";(*6*)
       ];
     start = S;
   }
